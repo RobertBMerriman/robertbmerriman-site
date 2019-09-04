@@ -1,0 +1,26 @@
+.header {
+  h1 {
+    color: black;
+    text-align: center;
+    font-size: 72pt;
+  }
+
+  margin: 0 auto;
+  padding: 5px 10px;
+  position: relative;
+  height: 40vh;
+  width: 80vw;
+  box-sizing: border-box;
+  background-color: white;
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 40vh;
+    border-style: solid;
+    border-width: 3vh 40vw;
+    border-color: white white rgba(0,0,0,0) rgba(0,0,0,0);
+  }
+}

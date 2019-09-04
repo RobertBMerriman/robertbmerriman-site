@@ -1,0 +1,75 @@
+@mixin artist-color($color) {
+  background: $color;
+
+  &:before {
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) $color $color;
+
+  }
+  &:after {
+    border-color: $color $color rgba(0,0,0,0) rgba(0,0,0,0);
+  }
+}
+
+body {
+  background-color: #282c34;
+}
+
+.main {
+  width: 80vw;
+  margin: 0 auto;
+  box-shadow: 0 0 50px 20px #555;
+  height: 200vh;
+}
+
+.artist {
+  margin: 6vh auto 0;
+  padding: 5px 10px;
+  position: relative;
+  height: 20vh;
+  width: 80vw;
+  background: tomato;
+  box-sizing: border-box;
+}
+
+.artist:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 20vh;
+  border-width: 3vh 40vw;
+  border-style: solid;
+  border-color: rgba(0,0,0,0) rgba(0,0,0,0) tomato tomato;
+}
+
+.artist:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  top: 20vh;
+  border-width: 3vh 40vw;
+  border-style: solid;
+  border-color: tomato tomato rgba(0,0,0,0) rgba(0,0,0,0);
+}
+
+.artist.blue {
+   @include artist-color(lightskyblue);
+ }
+
+.artist.yellow {
+  @include artist-color(yellow);
+}
+
+.artist.magenta {
+  @include artist-color(magenta);
+}
+
+.artist.black {
+  color: white;
+  @include artist-color(black);
+}
+
+.artist.white {
+  @include artist-color(white);
+}
